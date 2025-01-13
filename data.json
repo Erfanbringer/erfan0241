@@ -1,0 +1,28 @@
+import os
+import json
+
+# تعریف داده‌های اولیه
+default_data = {
+    "users": {
+        "1": {"name": "واحد 1", "paid": False},
+        "2": {"name": "واحد 2", "paid": False},
+        "3": {"name": "واحد 3", "paid": False},
+        "4": {"name": "واحد 4", "paid": False},
+        "5": {"name": "واحد 5", "paid": False},
+        "6": {"name": "واحد 6", "paid": False},
+        "7": {"name": "واحد 7", "paid": False},
+        "8": {"name": "واحد 8", "paid": False}
+    },
+    "fund": {
+        "total": 1000000,
+        "spent": 0
+    },
+    "admins": ["123456789", "987654321"]
+}
+
+# بررسی وجود فایل JSON
+if not os.path.exists("data.json"):
+    # ایجاد فایل و نوشتن داده‌های اولیه
+    with open("data.json", "w") as file:
+        json.dump(default_data, file, indent=4)
+    print("فایل data.json ایجاد شد.")
